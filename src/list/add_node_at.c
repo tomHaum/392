@@ -15,6 +15,7 @@ void add_node_at(struct s_node* node, struct s_node** head, int n){
   assert(head != 0);
   if(n==0){
     add_node(node,head);
+    return;
   }
   while(n>1 && temp->next != 0){
     temp = temp->next;
