@@ -6,8 +6,8 @@
 
 /*print int n in numbase of char* str*/
 void my_num_base(int n, char *str){
-  int b = my_strlen(str); /*integer representation of 'base' of number (base 2, base 10, etc)*/
-  int pwr = b; /*Iterator used to express current highest power for n*/
+  int b;
+  int pwr;
   int neg = 1;
   /*doesnt attempt max neg*/
 
@@ -20,6 +20,8 @@ void my_num_base(int n, char *str){
     neg = -1;
     my_char('-');
   }
+  b = my_strlen(str); /*integer representation of 'base' of number (base 2, base 10, etc)*/
+  pwr = b; /*Iterator used to express current highest power for n*/
   /*Unary case: print the single char n times*/
   if(b == 1){
     while(n > 0){
