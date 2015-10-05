@@ -11,17 +11,24 @@
 */
 void append(struct s_node* node, struct s_node** head){
   struct s_node* temp;
-  assert(head != 0);
-  if(node == 0 || node->elem == 0)
+  assert(head != 0 && node != 0 && node->elem != 0);
+  /*Case: Empty List*/
+  if(*head == 0){
+    *head = node;
     return;
+  }
+
+  /*Case: 1 element in the list*/
   if((*head)->next == 0){
-    my_str("head was only item in list...");
+    /*my_str("head was only item in list...");*/
     (*head)->next = node;
     node->prev = *head;
     return;
   }
+
   /*append(node,head->next);*//*recursive solution*/
   temp = *head;
+  /*Iterate to the end of the list*/
   while(temp->next != 0){
     temp = temp->next;
   }

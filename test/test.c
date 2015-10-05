@@ -1,4 +1,4 @@
-#include "my.h"
+#include "../include/my.h"
 #include <stdlib.h>
 #ifndef NULL
 #define NULL ((void*)0)

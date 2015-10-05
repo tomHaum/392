@@ -4,6 +4,8 @@
 */
 #include "../../include/mylist.h"
 #include <stdlib.h>
+
+/*Returns new struct s_node* with elem of elem, next ptr set to next and prev pointer set to previous*/
 struct s_node* new_node(void* elem, struct s_node* next, struct s_node* previous){
   struct s_node* myNode = (struct s_node*)malloc(sizeof(struct s_node*));
   myNode->elem = elem;

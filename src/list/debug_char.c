@@ -15,6 +15,7 @@ void debug_char(struct s_node* head){
     my_str("Empty List.");
     return;
   }
+
   my_str("(");
   print_char(head->prev);
   my_str(" <- ");

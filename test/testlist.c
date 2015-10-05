@@ -4,11 +4,7 @@
 #ifndef NULL
 #define NULL ((void*)0)
 #endif
-/*
-  while(*head = (*head)->next)
-  free((*head)->prev);
-  free(*head);
- */
+
 int main(int argc, char const *argv[]){
   struct s_node** myhead = (struct s_node**)malloc(sizeof(struct s_node**));
   struct s_node* nodeptr;
@@ -25,6 +21,10 @@ int main(int argc, char const *argv[]){
   int *mynumptr5;
   int mynum6;
   int *mynumptr6;
+  int mynum7;
+  int *mynumptr7;
+  int mynum8;
+  int *mynumptr8;
   mynum = 4;
   mynumptr = &mynum;
   mynum2 = 5;
@@ -37,6 +37,11 @@ int main(int argc, char const *argv[]){
   mynumptr5 = &mynum5;
   mynum6 = 10;
   mynumptr6 = &mynum6;
+  mynum7 = 11;
+  mynumptr7 = &mynum7;
+  mynum8 = 12;
+  mynumptr8 = &mynum8;
+
   my_str("Length of the list(should be 0): ");
   my_int(count_s_nodes(*myhead));
   my_char('\n');
@@ -90,13 +95,13 @@ int main(int argc, char const *argv[]){
   traverse_int(*myhead);
   my_char('\n');
   my_char('\n');
-
+  /*
   my_str("adding 10 back to front\n");
   add_node(nodeptr,myhead);
   traverse_int(*myhead);
   my_char('\n');
   my_char('\n');
-
+  */
   my_str("remove second elem\n");
   my_int(*((int *) remove_node_at(myhead,1)));
   my_char('\n');
@@ -110,11 +115,27 @@ int main(int argc, char const *argv[]){
   my_char('\n');
 
   while((*myhead)->next){
+    my_char('x');
     remove_node_at(myhead, 1);
   }
+  traverse_int(*myhead);
   my_str("\nRemoved all but head\n");
   traverse_int(*myhead);
   my_char('\n');
+
+  add_elem(mynumptr7,myhead);
+  add_elem(mynumptr8,myhead);
+
+  traverse_int(*myhead);
+
+  my_str("\nAttempting to print empty list...\n");
+  empty_list(myhead);
+  my_str("trying to print\n");
+  traverse_int(*myhead);
+  if(myhead == 0)
+    my_str("head is null");
+  if(*myhead == 0)
+    my_str("head pointing to null");
 
 
 

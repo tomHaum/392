@@ -9,11 +9,11 @@
 void* remove_node_at(struct s_node** head, int n){
   void* ret;
   struct s_node* curr;
-  assert(head != 0);
+  assert(head != 0 && n>=0);
   if(*head == 0){
     return 0;
   }
-  if(n <= 0){
+  if(n == 0){
     return remove_node(head);
   }
   curr = *head;

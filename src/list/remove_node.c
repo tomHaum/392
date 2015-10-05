@@ -19,9 +19,16 @@ void* remove_node(struct s_node** node){
   temp = *node;
   /*Increment head node up one, and remove new heads prev pointer*/
   *node = (*node)->next;
-  if(*node != 0){
-    (*node)->prev = 0;
+
+  /*If node originally had a prev element, make that prev element point to the node after temp*/
+  if((temp)->prev != 0){
+    (temp)->prev->next = (*node);
   }
+  /*If node is not null, change its prev pointer to the previous of temp*/
+  if(*node != 0){
+    (*node)->prev = temp->prev;
+  }
+
   free(temp);
   return ret;
 }

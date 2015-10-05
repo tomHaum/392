@@ -12,11 +12,9 @@
 */
 void add_elem(void* elem, struct s_node** head){
   struct s_node* node;
-  assert(head != 0);
-  if(elem == 0){
-    return;
-  }
-
+  /*Error Checking*/
+  assert(head != 0 && elem != 0);
+  /*Add the element*/
   node = new_node(elem,0,0);
   add_node(node,head);
 }

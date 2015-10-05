@@ -5,7 +5,8 @@
 #include "../../include/mylist.h"
 
 int count_s_nodes(struct s_node* head){
-  int acc = 0;
+  int acc = 0; /*Count number of s nodes*/
+  /*Iterate through list, counting s_nodes*/
   while(head!= 0){
     head = head->next;
     acc++;

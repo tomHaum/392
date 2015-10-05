@@ -10,6 +10,7 @@ void* remove_last(struct s_node** head){
     struct s_node* curr;
     void* ret;
     assert(head != 0);
+    /*If empty list, return null ptr*/
     if(*head == 0){
       return 0;
     }
@@ -19,7 +20,10 @@ void* remove_last(struct s_node** head){
       curr = curr->next;
     }
     /*We are now at last node in list*/
-    curr->prev->next = 0;
+    /*If curr has a prev, set its next to 0*/
+    if(curr->prev != 0){
+      curr->prev->next = 0;
+    }
     ret = curr->elem;
     free(curr);
     return ret;
