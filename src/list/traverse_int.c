@@ -14,6 +14,7 @@ void traverse_int(struct s_node* head){
   }
   print_int(head);
   while(head->next != 0){
+    my_char(' ');
     head = head->next;
     print_int(head);
   }

@@ -5,14 +5,13 @@
 #include "../../include/mylist.h"
 #include "../../include/my.h"
 
-
 /*
- Prints the elem of node as a in
+ Prints the elem of node as a char
 */
-void print_int(struct s_node* node){
+void print_char(struct s_node* node){
   if(node == 0 || node->elem == 0){/*might be too safe, there shouldnt be a node with a null elem*/
     my_str("NULL");
     return;
   }
-  my_int(*(int *)(node->elem));
+  my_char(*(char*)(node->elem));
 }

@@ -1,5 +1,4 @@
-/*
-/Name: Matthew Crepea and Thomas Haumersen
+/*/Name: Matthew Crepea and Thomas Haumersen
 /Pledge: I pledge my honor that I have abided by the Stevens Honor System. Matthew Crepea Thomas Haumersen
 */
 #include "../../include/mylist.h"
@@ -17,6 +16,8 @@ void add_node_at(struct s_node* node, struct s_node** head, int n){
     add_node(node,head);
     return;
   }
+  node->next =0;
+  node->prev=0;
   while(n>1 && temp->next != 0){
     temp = temp->next;
     n--;

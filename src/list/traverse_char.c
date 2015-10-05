@@ -5,14 +5,17 @@
 #include "../../include/mylist.h"
 #include "../../include/my.h"
 
-
 /*
- Prints the elem of node as a in
+ Prints all the elems as chars separated by a space
 */
-void print_int(struct s_node* node){
-  if(node == 0 || node->elem == 0){/*might be too safe, there shouldnt be a node with a null elem*/
-    my_str("NULL");
+void traverse_char(struct s_node* head){
+  if(head == 0){
     return;
   }
-  my_int(*(int *)(node->elem));
+  print_char(head);
+  while(head->next != 0){
+    my_char(' ');
+    head = head->next;
+    print_char(head);
+  }
 }
